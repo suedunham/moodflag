@@ -1,23 +1,3 @@
-'use strict';
-
-window.DefinePanel('Scrolling Item Detail', { author: ['Raphael Quast', 'Sue Dunham'] });
-include(fb.ComponentPath + 'samples\\complete\\js\\lodash.min.js');
-include(fb.ComponentPath + 'samples\\complete\\js\\helpers.js');
-
-/* Modification by Sue Dunham of 'TripleQ_text.js' by Raphael Quast from
-   The TripleQ theme.
-   https://github.com/raphaelquast/foobar2000_TripleQ
-
-    - Removed the second line showing the album and date.
-    - Refactored to replace hard-coded values with constants. Some of
-      these were made into user-configurable properties.
-    - Replaced uses of gr.MeasureString with gr.GdiCalcHeight and
-      gr.GdiCalcWidth to address uneven spacing around the delimiter
-      between artist and title.
-    - Added DT_NOPREFIX flag to gr.GdiDrawText calls to make ampersands
-      appear correctly.
-*/
-
 // Modified from code originally found as part of the TripleQ theme.
 // https://github.com/raphaelquast/foobar2000_TripleQ
 
@@ -308,7 +288,7 @@ function reset_timer() {
 
 
 function update_colours() {
-    if (window.IsDefaultUI) {
+    if (window.InstanceType == 1) {
         colours.text = window.GetColourDUI(ColourTypeDUI.text);
         colours.highlight = window.GetColourDUI(ColourTypeDUI.highlight);
         colours.background = window.GetColourDUI(ColourTypeDUI.background);
